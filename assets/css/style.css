@@ -83,7 +83,8 @@ body {
   text-decoration: none;
 }
 
-.main-nav {
+.main-nav,
+.main-items {
   width: 100%;
 }
 .nav a {
@@ -120,4 +121,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.shopping-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+.item {
+  height: 479px;
+  width: 384px;
+  border-left: 2px solid #585858;
+  border-bottom: 1px solid #585858;
 }
