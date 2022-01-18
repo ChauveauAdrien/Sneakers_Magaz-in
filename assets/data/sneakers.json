@@ -1,0 +1,64 @@
+{
+    "results": [
+        {
+            "image": "./assets/img/Sacai villain red.PNG.png",
+            "name": "Sacai x Nike Vaporwaffle \"Villain Red\"",
+            "brand": "Nike",
+            "price": "510€"
+        },
+        {
+            "image": "./assets/img/NewBalance990v3JoeFreshgoodsOutsideClothes.png",
+            "name": "New Balance990 v3 Joe  FRESHGOODS OUTSIDE CLOTHES",
+            "brand": "New Balance",
+            "price": "370€"
+        },
+        {
+            "image": "./assets/img/air-jordan-1-mid-fearless-maison-chateau-rouge.png",
+            "name": "Air Jordan 1 Mid Fearless \"Maison Château Rouge\"",
+            "brand": "Nike",
+            "price": "790€"
+        },
+        {
+            "image": "./assets/img/dunkLowStrangelove.png",
+            "name": "Nike Dunk Low SB x Strange Love",
+            "brand": "Nike",
+            "price": "1250€"
+        },
+        {
+            "image": "./assets/img/550-white-purple.png",
+            "name": "New Balance 550 White  Purple",
+            "brand": "New Balance",
+            "price": "250€"
+        },
+        {
+            "image": "./assets/img/dunk-low-disrupt-black-pale-ivory.png",
+            "name": "Nike Dunk Low Disrupt Black Pale Ivory",
+            "brand": "Nike",
+            "price": "350€"
+        },
+        {
+            "image": "./assets/img/air-max-sean-wotherspoon.png",
+            "name": "Air Max Sean Wotherspoon",
+            "brand": "Nike",
+            "price": "1350€"
+        },
+        {
+            "image": "./assets/img/adidas-sean-wotherspoon.png",
+            "name": "Superturf Adventure  Sean  Wotherspoon  Disney Jiminy Cricket",
+            "brand": "Adidas",
+            "price": "190€"
+        },
+        {
+            "image": "./assets/img/Sacai villain red.PNG.png",
+            "name": "Adidas Forum Low Blue",
+            "brand": "Adidas",
+            "price": "100€"
+        },
+        {
+            "image": "./assets/img/air-jordan-1-retro-high-og-origin-story-spider-man.png",
+            "name": "Air Jordan 1 Retro High  Spider Man Origin Story  ",
+            "brand": "Nike",
+            "price": "1315€"
+        }
+    ]
+}
