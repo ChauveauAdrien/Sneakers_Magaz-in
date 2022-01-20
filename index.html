@@ -5,14 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SNEAKERS MAGAZ'in</title>
-    <!-- reset css -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- js -->
-    <script src="./assets/js/script.js"></script>
+    <script async src="./assets/js/script.js"></script>
 </head>
 <body>
+    <div class="cursor"></div>
     <header class="header-wrapper">
         <div class="site-name">SNEAKERS MAGAZ'in</div>
         <div class="header-nav">
@@ -23,7 +22,44 @@
                 <a href="#">my account</a>
             </nav>  
         </div>
-        <div class="shopping-cart">0</div>
+        <div class="header-left-nav">
+            <div class="header-search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30.255" height="30.255" viewBox="0 0 30.255 30.255">
+                    <g id="Icon_feather-search" data-name="Icon feather-search" transform="translate(2.255 1)">
+                    <path id="Tracé_5" data-name="Tracé 5" d="M4.5,16.5a12,12,0,1,0,12-12A12,12,0,0,0,4.5,16.5Z" transform="translate(-1.5 -4.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                    <path id="Tracé_6" data-name="Tracé 6" d="M24.975,32.34l7.365-7.365" transform="translate(-25.815 -4.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="shopping-cart">0</div>
+            <div class="cart">
+                <div class="blank"></div>
+                <div class="cart-item">
+                    <img src="./assets/img/NewBalance990v3JoeFreshgoodsOutsideClothes.png" alt="">
+                    <p>Sacai x Nike Vaporwaffle "Villain Red"</p>
+                    <p>Nike</p>
+                    <p>qty 1</p>
+                </div>
+                <div class="separator"></div>
+                <div class="total">
+                    <p>sub total</p>
+                    <p>510€</p>
+                    <p>shipping costs</p>
+                    <p>9.99€</p>
+                    <p>total</p>
+                    <p>519.99€</p>
+                </div>
+            </div>
+            <div class="burger-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="19.232" height="11.218" viewBox="0 0 19.232 11.218">
+                    <g id="Icon_ionic-ios-menu" data-name="Icon ionic-ios-menu" transform="translate(-4.5 -10.125)">
+                    <path id="Tracé_2" data-name="Tracé 2" d="M22.93,11.728H5.3a.8.8,0,0,1-.8-.8h0a.8.8,0,0,1,.8-.8H22.93a.8.8,0,0,1,.8.8h0A.8.8,0,0,1,22.93,11.728Z"/>
+                    <path id="Tracé_3" data-name="Tracé 3" d="M22.93,18.478H5.3a.8.8,0,0,1-.8-.8h0a.8.8,0,0,1,.8-.8H22.93a.8.8,0,0,1,.8.8h0A.8.8,0,0,1,22.93,18.478Z" transform="translate(0 -1.942)"/>
+                    <path id="Tracé_4" data-name="Tracé 4" d="M22.93,25.228H5.3a.8.8,0,0,1-.8-.8h0a.8.8,0,0,1,.8-.8H22.93a.8.8,0,0,1,.8.8h0A.8.8,0,0,1,22.93,25.228Z" transform="translate(0 -3.884)"/>
+                    </g>
+                </svg>  
+            </div>
+        </div>
     </header>
     <main class="main-wrapper">
         <section class="sidebar-wrapper">
@@ -60,7 +96,12 @@
                 </div>
             </div>
             <div class="shopping-items">
+                
             </div>
+            <div class="seeMore">
+                <button class="see-more">see more</button>
+            </div>
+            
         </section>
         
         
