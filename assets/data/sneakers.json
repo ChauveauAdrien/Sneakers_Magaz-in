@@ -4,71 +4,81 @@
             "id": "item-1",
             "image": "./assets/img/Sacai villain red.PNG.png",
             "name": "Sacai x Nike Vaporwaffle \"Villain Red\"",
+            "alt": "paire de sacai \"Villain Red\"",
             "brand": "Nike",
-            "price": "510€"
+            "price": "510"
         },
         {
             "id": "item-2",
             "image": "./assets/img/NewBalance990v3JoeFreshgoodsOutsideClothes.png",
+            "alt": "paire de New Balance990 v3 Joe  FRESHGOODS OUTSIDE CLOTHES",
             "name": "New Balance990 v3 Joe  FRESHGOODS OUTSIDE CLOTHES",
             "brand": "New Balance",
-            "price": "370€"
+            "price": "370"
         },
         {
             "id": "item-3",
             "image": "./assets/img/air-jordan-1-mid-fearless-maison-chateau-rouge.png",
+            "alt": "paire de Air Jordan 1 Mid Fearless \"Maison Château Rouge\"",
             "name": "Air Jordan 1 Mid Fearless \"Maison Château Rouge\"",
             "brand": "Nike",
-            "price": "790€"
+            "price": "790"
         },
         {
             "id": "item-4",
             "image": "./assets/img/dunkLowStrangelove.png",
+            "alt": "paire de Nike Dunk Low SB x Strange Love",
             "name": "Nike Dunk Low SB x Strange Love",
             "brand": "Nike",
-            "price": "1250€"
+            "price": "1250"
         },
         {
             "id": "item-5",
             "image": "./assets/img/550-white-purple.png",
+            "alt": "paire de New Balance 550 White  Purple",
             "name": "New Balance 550 White  Purple",
             "brand": "New Balance",
-            "price": "250€"
+            "price": "250"
         },
         {
             "id": "item-6",
             "image": "./assets/img/dunk-low-disrupt-black-pale-ivory.png",
+            "alt": "paire de Nike Dunk Low Disrupt Black Pale Ivory",
             "name": "Nike Dunk Low Disrupt Black Pale Ivory",
             "brand": "Nike",
-            "price": "350€"
+            "price": "350"
         },
         {
             "id": "item-7",
             "image": "./assets/img/air-max-sean-wotherspoon.png",
+            "alt": "paire de Air Max Sean Wotherspoon",
             "name": "Air Max Sean Wotherspoon",
             "brand": "Nike",
-            "price": "1350€"
+            "price": "1350"
         },
         {
             "id": "item-8",
             "image": "./assets/img/adidas-sean-wotherspoon.png",
+            "alt": "paire de Superturf Adventure  Sean  Wotherspoon  Disney Jiminy Cricket",
             "name": "Superturf Adventure  Sean  Wotherspoon  Disney Jiminy Cricket",
             "brand": "Adidas",
-            "price": "190€"
+            "price": "190"
         },
         {
             "id": "item-9",
-            "image": "./assets/img/Sacai villain red.PNG.png",
+            "image": "./assets/img/Chaussure_Forum_Low_Blanc.png",
+            "alt": "paire de Adidas Forum Low Blue",
             "name": "Adidas Forum Low Blue",
             "brand": "Adidas",
-            "price": "100€"
+            "price": "100"
         },
         {
             "id": "item-10",
             "image": "./assets/img/air-jordan-1-retro-high-og-origin-story-spider-man.png",
+            "alt": "paire de Air Jordan 1 Retro High  Spider Man Origin Story  ",
             "name": "Air Jordan 1 Retro High  Spider Man Origin Story  ",
             "brand": "Nike",
-            "price": "1315€"
+            "price": "1315"
         }
     ]
 }

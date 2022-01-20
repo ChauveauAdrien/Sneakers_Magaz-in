@@ -1,5 +1,6 @@
+/*  import de la font */
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
-
+/* parametres generaux */
 * {
   margin: 0;
   box-sizing: border-box;
@@ -10,31 +11,8 @@ body {
   font-family: "PT Sans", sans-serif;
   font-size: 10px;
   text-transform: uppercase;
-  /* cursor: none; */
-  height: 100%;
-  /* overflow: hidden; */
 }
-.cursor {
-  width: 40px;
-  height: 40px;
-  cursor: none;
-  border: 1px solid black;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 5;
 
-}
-.cursor::before {
- content: '';
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- width: 5px;
- height: 5px;
- background: black;
- border-radius: 50%;
-}
 /* Header */
 .header-wrapper {
   display: flex;
@@ -94,10 +72,6 @@ body {
   align-items: center;
 }
 
-
-/* .header-wrapper {
-  display: flex;
-} */
 
 /* Main */
 .main-wrapper {
@@ -197,7 +171,7 @@ body {
   color: #585858;
 }
 
-.price {
+.price-wrapper {
   display: flex;
   justify-content: space-between;
 }
@@ -323,7 +297,7 @@ padding: 8px 22px;
   position: absolute;
   z-index: 2;
   top: 10%;
-  left: 69%;
+  left: 66%;
   height: 762px;
   width: 550px;
   background: #F6F6D5;
@@ -331,6 +305,7 @@ padding: 8px 22px;
   display: none;
   flex-direction: column;
   justify-content: space-between;
+  overflow: auto;
 }
 
 .blank {
@@ -340,20 +315,75 @@ padding: 8px 22px;
 }
 
 .cart-item {
+  margin: 10px auto 0px auto;
+  width: 90%;
   display: flex;
+  flex-wrap: wrap;
 }
 .cart-item img {
-  width: 35%;
+  width: auto;
+  height: 90px;
+  
+}
+.descriptif {
+  margin-left: 30px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.descriptif p:first-child {
+  font-size: 1.8em;
+  margin-bottom: 8px;
+}
+.descriptif p:nth-child(2) {
+  font-size: 1.7em;
+  margin-bottom: 8px;
+}
+.descriptif p:last-child {
+  font-size: 1.5em;
+}
+
+.total-wrapper {
+  margin-top: 10px;
+  align-self: flex-end;
   height: auto;
+  width: 100%;
+  background: #F6F6D5;
+  border-top: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+.sub-total,
+.shipping-cost{
+width: 100%;
+height: 30px;
+display: flex;
+justify-content: space-between;
+margin: 20px 80px 0px 60px;
+font-size: 1.7em;
+}
+
+.separator {
+ height: 1px;
+ width: 70%;
+ background: black;
+ margin: auto;
+ margin-top: 30px;
 }
 
 .total {
-  align-self: flex-end;
-  height: 200px;
-  width: 100%;
-  background: red;
-  border-top: 1px solid black;
+ width: 100%;
+ height: 30px;
+ display: flex;
+ justify-content: space-between;
+ margin: 10px 80px 35px 60px;
+ font-size: 1.7em;
+
+
+
+
 }
+
 
 .show {
   display: flex;

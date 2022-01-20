@@ -2,11 +2,7 @@
 
 
 
-// const cursor = document.querySelector('.cursor');
 
-// document.addEventListener('mousemove', e => {
-//     cursor.setAttribute('style', 'top:'+(e.pageY - 20)+"px; left:"+(e.pageX - 20)+"px;")
-// })
 
 // ---------------------------------------------------------------------------
 //  panier
@@ -21,13 +17,13 @@ function toggleCart() {
 // --------------------------------------------------------------------------
 // ------------------------------------------------------------------------------
 // Fetch
-let flag = false; 
 fetch("assets/data/sneakers.json")
   .then((res) => res.json())
   .then((jsonSneakers) => {
     jsonSneakers.results.map((sneakers) => {
       let id = sneakers.id;
       let image = sneakers.image;
+      let alt = sneakers.alt;
       let name = sneakers.name;
       let brand = sneakers.brand;
       let price = sneakers.price;
@@ -41,13 +37,13 @@ fetch("assets/data/sneakers.json")
      </div>
      <div class="sneakers-info">
          <div class="sneakers-img">
-         <img src="${image}" alt="paire de sacai villain red">
+         <img src="${image}" alt="paire de sacai villain red" class="snkrsImg" alt="${alt}">
          </div>
-         <h1>${name}</h1>
-         <h2>${brand}</h2>
-         <div class="price">
-             <h3>${price}</h3>
-             <button class="add-cart-btn" >+</button>
+         <h1 class="name">${name}</h1>
+         <h2 class="brand">${brand}</h2>
+         <div class="price-wrapper">
+             <h3 class="price">${price}€</h3>
+             <button class="add-cart-btn">+</button>
          </div>
      </div>
  </div>
@@ -55,21 +51,90 @@ fetch("assets/data/sneakers.json")
       document.querySelector(".shopping-items").innerHTML += sneakersItem;
       
     });
+    addToCart();
   });
-flag = true;
 // Fin du fetch
 // ---------------------------------------------------------------------
-// console.log(flag);
-// if (flag = true) {
-  // let addCartBtn = document.querySelectorAll('.add-cart-btn');
-  // console.log(addCartBtn);
-// addCartBtn.addEventListener('click', addToCart)
-// }
+// ---------------------------------------------------------------------
+// fonction pour ajouter au panier
+function addToCart() {
+  let btns = document.querySelectorAll('.add-cart-btn')
+  for (const btn of btns) {
+    btn.addEventListener('click', function () {
+      let item = this.closest(".item"); 
+      let snkrsImg = item.querySelector('.snkrsImg').src;
+      let name = item.querySelector('.name').textContent;
+      let brand = item.querySelector('.brand').textContent;
+      let cartItem = `
+      <div class="separator"></div>
+      <div class="cart-item">
+        <img src="${snkrsImg}" alt="">
+        <div class="descriptif">
+            <p>${name}</p>
+            <p>${brand}</p>
+            <div class="quantity">
+              <p>qty 1</p>
+              <ion-icon name="chevron-up-outline" class="chevron-top"></ion-icon>
+              <ion-icon name="chevron-down-outline" class="chevron-down"></ion-icon>
+            </div>
+        </div>
+      </div>
+      `;
+      document.querySelector(".top-cart").innerHTML += cartItem;  
 
-// function addToCart(e) {
-  // e.target.style.backgroundColor= "red";
-  // console.log('ok');
-// }
+      function cartNbr () {
+        let cartNbr = document.querySelector('.shopping-cart')
+        let cartNbrFloat = parseFloat(cartNbr.innerHTML);
+        cartNbr.innerHTML = cartNbrFloat + 1
+
+
+
+      }cartNbr()
+
+
+
+      function calculatePrice() {
+        // Sub total
+        let price = item.querySelector('.price');
+        let stringPriceToNumber = parseFloat(price.innerHTML)
+        let subPrice = document.querySelector('.subPrice');
+        let numberSubPrice = parseFloat(subPrice.innerHTML);
+        subPrice.innerHTML = numberSubPrice+stringPriceToNumber + '€';
+
+        // Shipping costs
+        let shippingCost = document.querySelector('.js-shippingCost')
+        let numberShippingCost = parseFloat(shippingCost.innerHTML);
+        shippingCost.innerHTML = numberShippingCost + 9.99 + '€';
+
+        // total
+        let finalTotal = document.querySelector('.finalTotal');
+        let numberFinalTotal = parseFloat(finalTotal.innerHTML);
+        console.log(numberSubPrice);
+        let finalPrice = numberSubPrice + numberShippingCost;
+        finalTotal.innerHTML = numberFinalTotal + finalPrice + '€'
+    
+      }calculatePrice()
+
+
+      function qty() {
+        let chevronTop = document.querySelectorAll('.chevron-top')
+        console.log(chevronTop);
+        chevronTop.addEventListener('click', console.log('ok'))
+
+
+      }qty()
+
+
+
+    })
+    
+  }
+}
+// fin de la fonction qui ajoute au panier
+// ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
+// 
+
 
 // function myfonction() {
 //   console.log(this.previousSibling);
