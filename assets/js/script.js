@@ -1,16 +1,10 @@
-
-
-
-
-
-
 // ---------------------------------------------------------------------------
 //  panier
 let cartBtn = document.querySelector(".shopping-cart");
 cartBtn.addEventListener("click", toggleCart);
 
 function toggleCart() {
-  let cart = document.querySelector('.cart')
+  let cart = document.querySelector(".cart");
   cart.classList.toggle("show");
 }
 //  fin du panier
@@ -49,7 +43,6 @@ fetch("assets/data/sneakers.json")
  </div>
       `;
       document.querySelector(".shopping-items").innerHTML += sneakersItem;
-      
     });
     addToCart();
   });
@@ -58,86 +51,106 @@ fetch("assets/data/sneakers.json")
 // ---------------------------------------------------------------------
 // fonction pour ajouter au panier
 function addToCart() {
-  let btns = document.querySelectorAll('.add-cart-btn')
+  let btns = document.querySelectorAll(".add-cart-btn");
   for (const btn of btns) {
-    btn.addEventListener('click', function () {
-      let item = this.closest(".item"); 
-      let snkrsImg = item.querySelector('.snkrsImg').src;
-      let name = item.querySelector('.name').textContent;
-      let brand = item.querySelector('.brand').textContent;
+    btn.addEventListener("click", function () {
+      let item = this.closest(".item");
+      let snkrsImg = item.querySelector(".snkrsImg").src;
+      let name = item.querySelector(".name").textContent;
+      let brand = item.querySelector(".brand").textContent;
+      let cartPrice = item.querySelector('.price').textContent
       let cartItem = `
-      <div class="separator"></div>
-      <div class="cart-item">
-        <img src="${snkrsImg}" alt="">
-        <div class="descriptif">
-            <p>${name}</p>
-            <p>${brand}</p>
-            <div class="quantity">
-              <p>qty 1</p>
-              <ion-icon name="chevron-up-outline" class="chevron-top"></ion-icon>
-              <ion-icon name="chevron-down-outline" class="chevron-down"></ion-icon>
-            </div>
+      <div class="cart-item-wrapper">
+        <div class="separator"></div>
+        <div class="cart-item">
+          <img src="${snkrsImg}" alt="">
+          <div class="descriptif">
+              <p>${name}</p>
+              <p>${brand}</p>
+              <div class="quantity">
+                <p>qty</p>
+                <p class="qty">1</p>
+                <div class="chevron">
+                  <ion-icon name="chevron-up-outline" class="chevron-top"></ion-icon>
+                  <ion-icon name="chevron-down-outline" class="chevron-down"></ion-icon>
+                </div>
+                <p class="cart-price">${cartPrice}</p>
+              </div>
+          </div>
         </div>
       </div>
       `;
-      document.querySelector(".top-cart").innerHTML += cartItem;  
-
-      function cartNbr () {
-        let cartNbr = document.querySelector('.shopping-cart')
+      document.querySelector(".top-cart").innerHTML += cartItem;
+// ----------------------------------------------------------------------------------
+// Fonction qui change le nombre d'articles au panier
+      function cartNbr() {
+        let cartNbr = document.querySelector(".shopping-cart");
         let cartNbrFloat = parseFloat(cartNbr.innerHTML);
-        cartNbr.innerHTML = cartNbrFloat + 1
-
-
-
-      }cartNbr()
-
-
+        cartNbr.innerHTML = cartNbrFloat + 1;
+      }
+      cartNbr();
 
       function calculatePrice() {
         // Sub total
-        let price = item.querySelector('.price');
-        let stringPriceToNumber = parseFloat(price.innerHTML)
-        let subPrice = document.querySelector('.subPrice');
+        let price = item.querySelector(".price");
+        let stringPriceToNumber = parseFloat(price.innerHTML);
+        let subPrice = document.querySelector(".subPrice");
         let numberSubPrice = parseFloat(subPrice.innerHTML);
-        subPrice.innerHTML = numberSubPrice+stringPriceToNumber + '€';
+        subPrice.innerHTML = numberSubPrice + stringPriceToNumber + "€";
 
         // Shipping costs
-        let shippingCost = document.querySelector('.js-shippingCost')
+        let shippingCost = document.querySelector(".js-shippingCost");
         let numberShippingCost = parseFloat(shippingCost.innerHTML);
-        shippingCost.innerHTML = numberShippingCost + 9.99 + '€';
+        shippingCost.innerHTML = numberShippingCost + 9.99 + "€";
 
         // total
-        let finalTotal = document.querySelector('.finalTotal');
+        let finalTotal = document.querySelector(".finalTotal");
         let numberFinalTotal = parseFloat(finalTotal.innerHTML);
         console.log(numberSubPrice);
         let finalPrice = numberSubPrice + numberShippingCost;
-        finalTotal.innerHTML = numberFinalTotal + finalPrice + '€'
-    
-      }calculatePrice()
+        finalTotal.innerHTML = numberFinalTotal + finalPrice + "€";
+      }
+      calculatePrice();
+// ------------------------------------------------------------------------------------
+// Fonction qui augmente et diminue les quantité
+      let chevronsTop = document.querySelectorAll(".chevron-top");
+      for (const chevronTop of chevronsTop) {
+        chevronTop.addEventListener("click", chevronPlusBtn);
+      }
 
+      let chevronsDown = document.querySelectorAll(".chevron-down");
+      for (const chevronDown of chevronsDown) {
+        chevronDown.addEventListener("click", chevronMoinsBtn);
+      }
+// plus
+      function chevronPlusBtn() {
+        let test = this.closest(".cart-item-wrapper");
+        let quantity = test.querySelector(".qty");
+        let floatQuantity = parseFloat(quantity.innerHTML);
+        quantity.innerHTML = floatQuantity + 1;
+        let cartPrice = test.querySelector('.cart-price');
+        floatCartPrice = parseFloat(cartPrice.innerHTML);
+        let initialPrice = floatCartPrice
+        cartPrice.innerHTML =  floatCartPrice + initialPrice + '€'
+      }
+// moins
+      function chevronMoinsBtn() {
+        let test = this.closest(".cart-item-wrapper");
+        let quantity = test.querySelector(".qty");
+        let floatQuantity = parseFloat(quantity.innerHTML);
+        quantity.innerHTML = floatQuantity - 1;
+        let cartPrice = test.querySelector('.cart-price');
+        floatCartPrice = parseFloat(cartPrice.innerHTML);
+        cartPrice.innerHTML =  floatCartPrice - floatCartPrice + '€'
 
-      function qty() {
-        let chevronTop = document.querySelectorAll('.chevron-top')
-        console.log(chevronTop);
-        chevronTop.addEventListener('click', console.log('ok'))
-
-
-      }qty()
-
-
-
-    })
-    
+        if (floatQuantity < 2) {
+          test.remove();
+          let cartNbr = document.querySelector(".shopping-cart");
+          let cartNbrFloat = parseFloat(cartNbr.innerHTML);
+          cartNbr.innerHTML = cartNbrFloat - 1;
+        }
+      }
+    });
   }
 }
-// fin de la fonction qui ajoute au panier
-// ------------------------------------------------------------------------
-// ------------------------------------------------------------------------
-// 
 
-
-// function myfonction() {
-//   console.log(this.previousSibling);
-// }
-
-// myfonction();
